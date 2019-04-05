@@ -37,8 +37,6 @@ def train(name, lrate, weight_decay, workers, device, train, validation, batch):
 
     print('model output name: {}'.format(name))
 
-    torch.set_num_threads(threads)
-
     model = Darknet53()
     optimizer = optim.Adam(model.parameters(), lr=lrate, weight_decay=weight_decay)
     criterion = nn.CrossEntropyLoss().to(device)
